@@ -28,7 +28,7 @@ use Template::Exception;
 
 use Data::Random qw(:all);
 
-$VERSION = '0.01';
+$VERSION = '0.02';
 
 sub new {
 
@@ -113,23 +113,23 @@ Template::Plugin::DataRandom - Plugin to access Data::Random method in Template 
 
 =head1 SYNOPSIS
 
- [% USE DataRandom %]
+ [% USE r = DataRandom %]
 
- [% words = rndwrds(size => 10) %]
+ [% words = r.rndwrds(size => 10) %]
 
- [% chars = rndchrs(set => alpha, size => 5 %]
+ [% chars = r.rndchrs(set => alpha, size => 5 %]
 
- [% set = rndset(set => ['string1', 'string2'], size => 5 %]
+ [% set = r.rndset(set => ['string1', 'string2'], size => 5 %]
 
- [% enum = rndenum(set => ['string1', 'string2', .. ]) %]
+ [% enum = r.rndenum(set => ['string1', 'string2', .. ]) %]
 
- [% date = rnddate(min => '1998-12-31') %]
+ [% date = r.rnddate(min => '1998-12-31') %]
 
- [% time = rndtime(min => '12:00:00', max => 'now' ) %]
+ [% time = r.rndtime(min => '12:00:00', max => 'now' ) %]
 
- [% dtime = rnddtime(min => '1978-9-21 4:0:0', max => 'now' ) %]
+ [% dtime = r.rnddtime(min => '1978-9-21 4:0:0', max => 'now' ) %]
 
- [% img = rndimg(minwidth => '10', maxwidth => '80', bgcolor => [55,120,255]) %]
+ [% img = r.rndimg(minwidth => '10', maxwidth => '80', bgcolor => [55,120,255]) %]
 
 
 =head1 DESCRIPTION
@@ -143,47 +143,47 @@ It is deeply inspired from Adekunle Olonoh L<Data::Random> module.
 
 This returns a list of random words given a wordlist.  See below for possible parameters.
 
-See L<Data::Random/rand_words> for more infos about available options.
+See L<Data::Random/rand_words()> for more infos about available options.
 
 =head2 rndchrs
 
 This returns a list of random characters given a set of characters.  See below for possible parameters.
 
-See L<Data::Random/rand_chars> for more infos about available options.
+See L<Data::Random/rand_chars()> for more infos about available options.
 
 =head2 rndset
 
 This returns a random set of elements given an initial set.  See below for possible parameters.
 
-See L<Data::Random/rand_set> for more infos about available options.
+See L<Data::Random/rand_set()> for more infos about available options.
 
 =head2 rnddate
 
 This returns a random date in the form "YYYY-MM-DD". 2-digit years are not currently supported.  Efforts are made to make sure you're returned a truly valid date--ie, you'll never be returned the date February 31st.  See the options below to find out how to control the date range.
 
-See L<Data::Random/rand_date> for more infos.
+See L<Data::Random/rand_date()> for more infos.
 
 =head2 rndtime
 
 This returns a random time in the form "HH:MM:SS".  24 hour times are supported.  See the options below to find out how to control the time range.
 
-See L<Data::Random/rand_datetime> for more infos about available options.
+See L<Data::Random/rand_datetime()> for more infos about available options.
 
 
 =head2 rnddtime
 
 This returns a random date and time in the form "YYYY-MM-DD HH:MM:SS".  See the options below to find out how to control the date/time range.
 
-See L<Data::Random/rand_datetime> for more infos about available options.
+See L<Data::Random/rand_datetime()> for more infos about available options.
 
 =head2 rndimg
 
 This returns a random image. Currently only PNG images are supported.  See below for possible parameters.
-See L<Data::Random/rand_image> for more infos about available options.
+See L<Data::Random/rand_image()> for more infos about available options.
 
 =head1 VERSION
 
-0.01
+0.02
 
 =head1 AUTHOR
 
