@@ -28,7 +28,7 @@ use Template::Exception;
 
 use Data::Random qw(:all);
 
-$VERSION = '0.02';
+$VERSION = '0.03';
 
 sub new {
 
@@ -183,7 +183,7 @@ See L<Data::Random/rand_image()> for more infos about available options.
 
 =head1 VERSION
 
-0.02
+0.03
 
 =head1 AUTHOR
 

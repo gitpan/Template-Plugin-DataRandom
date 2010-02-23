@@ -5,7 +5,10 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     NAME              => 'Template::Plugin::DataRandom',
     VERSION_FROM      => 'lib/Template/Plugin/DataRandom.pm', # finds $VERSION
-    PREREQ_PM         => {'Data::Random' => '0.05'}, # e.g., Module::Name => 1.1
+    PREREQ_PM         => {'Data::Random' => '0.05',
+			  'Template::Plugin' => '2.7',
+			  'Template'         => '2.20',
+			  }, # e.g., Module::Name => 1.1
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
       (ABSTRACT_FROM  => 'lib/Template/Plugin/DataRandom.pm', # retrieve abstract from module
        AUTHOR         => 'Emmanuel Quevillon <tuco@pasteur.fr>') : ()),
